@@ -28,6 +28,7 @@
             Console.WriteLine($"Number of small carpets: {NumberofSmallCarpet} <--");
             Console.WriteLine($"Number of large carpets: {NumberofLargeCarpet} <--");
 
+
         }
     }
 }
