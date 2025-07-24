@@ -35,7 +35,7 @@
             Console.WriteLine($"Price per small room: ${SmallCarpetPrice}");
             Console.WriteLine($"Price per large room: ${LargeCarpetPrice}");
 
-             Cost = Convert.ToDouble((NumberofSmallCarpet * SmallCarpetPrice) + (NumberofLargeCarpet * LargeCarpetPrice));
+            Cost = Convert.ToDouble((NumberofSmallCarpet * SmallCarpetPrice) + (NumberofLargeCarpet * LargeCarpetPrice));
             TaxAmount = Convert.ToDouble((Cost * TaxPersc)/100);
             Console.WriteLine($"Cost: ${Cost}");
             Console.WriteLine($"Tax: ${TaxAmount}");
