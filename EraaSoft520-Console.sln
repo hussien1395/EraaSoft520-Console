@@ -5,13 +5,9 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EraaSoft520-Console", "EraaSoft520-Console\EraaSoft520-Console.csproj", "{B5D75963-95BD-429D-91D2-1EAA320556A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 002 -Task-0001", "EraaSoft-Task-0001\Session 002 -Task-0001.csproj", "{3C97A335-6BE8-4CB7-A795-52439E37CB0D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 002 Challenges", "Session 001 Challenges\Session 002 Challenges.csproj", "{42CC709A-6B5D-4944-A567-176E3F007962}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 003 Challenges", "Session 003 Challenges\Session 003 Challenges.csproj", "{6F51CFCA-5447-472B-8481-C87A96EB52D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session 003 -Task-0001", "Session 003 -Task-0001\Session 003 -Task-0001.csproj", "{2DC2C14D-CD28-4968-AE01-D9AB8BAFE894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 003 -Task-0001", "Session 003 -Task-0001\Session 003 -Task-0001.csproj", "{2DC2C14D-CD28-4968-AE01-D9AB8BAFE894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +19,6 @@ Global
 		{B5D75963-95BD-429D-91D2-1EAA320556A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D75963-95BD-429D-91D2-1EAA320556A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D75963-95BD-429D-91D2-1EAA320556A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C97A335-6BE8-4CB7-A795-52439E37CB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C97A335-6BE8-4CB7-A795-52439E37CB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C97A335-6BE8-4CB7-A795-52439E37CB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C97A335-6BE8-4CB7-A795-52439E37CB0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42CC709A-6B5D-4944-A567-176E3F007962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42CC709A-6B5D-4944-A567-176E3F007962}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42CC709A-6B5D-4944-A567-176E3F007962}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42CC709A-6B5D-4944-A567-176E3F007962}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F51CFCA-5447-472B-8481-C87A96EB52D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F51CFCA-5447-472B-8481-C87A96EB52D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F51CFCA-5447-472B-8481-C87A96EB52D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
