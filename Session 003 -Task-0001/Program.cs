@@ -4,7 +4,41 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Task 001
+
+            Console.WriteLine("Enter your mark (0-100):");
+            int Mark=Convert.ToInt32(Console.ReadLine());
+            if (Mark>=90 && Mark<=100)
+            {
+                Console.WriteLine("Grade: A");
+            }
+            else if(Mark>=80 && Mark<=89)
+            {
+                Console.WriteLine("Grade: B");
+            }
+            else if (Mark >=70 && Mark<=79)
+            {
+                Console.WriteLine("Grade: C");
+            }
+            else if(Mark >=60 && Mark <= 69)
+            {
+                Console.WriteLine("Grade: D");
+            }
+            else
+            {
+                Console.WriteLine("Grade: F");
+            }
+
+
+            // Task 002
+
+            Console.WriteLine("\nEnter a number to print its multiplication table:");
+            int x = Convert.ToInt32(Console.ReadLine());
+          
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.WriteLine($"{x} * {i} = {x*i}");
+            }
         }
     }
 }
