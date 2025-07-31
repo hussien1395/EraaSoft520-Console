@@ -34,10 +34,12 @@
 
             Console.WriteLine("\nEnter a number to print its multiplication table:");
             int x = Convert.ToInt32(Console.ReadLine());
-          
-            for (int i = 1; i <= 12; i++)
+            int i = 1;
+
+            while ( i <= 12)
             {
                 Console.WriteLine($"{x} * {i} = {x*i}");
+                i++;
             }
         }
     }
