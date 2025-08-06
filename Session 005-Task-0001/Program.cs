@@ -1,11 +1,43 @@
-﻿namespace Session_005_Task_0001
+﻿using System;
+
+namespace Session_005_Task_0001
 {
+
     internal class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
+
+            // Overloading
+            Console.WriteLine("<<<<<<<< Overloading >>>>>>>>>");
+            Overloading overlapped = new Overloading();
+
+            // #1
+            Console.WriteLine("\n<<<<<<<< (1) Sum 2 numbers (10 and 20) >>>>>>>>>");
+            Console.WriteLine($"Sum : {overlapped.Sum()}");
+
+            // #2
+            Console.WriteLine("\n<<<<<<<< (2) Sum 2 numbers from the user >>>>>>>>>");
+            Console.WriteLine("Please enter number 1");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter number 2");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{n1} + {n2} = {overlapped.Sum(n1, n2)}");
+
+            // #3
+            Console.WriteLine("\n<<<<<<<< (3) Sum 3 numbers from the user >>>>>>>>>");
+            Console.WriteLine("Please enter number 1");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter number 2");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter number 3");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{num1} + {num2} + {num3} = {overlapped.Sum(num1, num2,num3)}");
+
+            // Task
             List<int> MyList = new List<int>();
             CheckOptions(ref MyList);
+
         }
 
         static void CheckOptions(ref List<int> list)
