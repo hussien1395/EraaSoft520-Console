@@ -3,11 +3,25 @@ using System.Transactions;
 
 namespace Session_006_Task_0001
 {
+    // encabsolation
+    // property
     public enum TransType
     {
         Deposit,
         Withdrawal,
         Transfer
+    }
+
+    class SavedAccount : Accounts
+    {
+        public double InterestRate { get; set; }
+
+        public SavedAccount(int ID, string name, string password, char gender, string address, 
+            string mobile, string email, double balance, List<Transactions> transactions, double interestRate) 
+            : base(ID, name, password, gender, address, mobile, email, balance, transactions)
+        {
+            InterestRate = interestRate;
+        }
     }
 
     class Transactions
@@ -36,6 +50,7 @@ namespace Session_006_Task_0001
     {
         public int ID;
         public string Name;
+        public string Password;
         public char Gender;
         public string Address;
         public string Mobile;
@@ -43,10 +58,12 @@ namespace Session_006_Task_0001
         public double Balance;
         List<Transactions> transactions;
 
-        public Accounts(int ID, string name, char gender, string address, string mobile, string email, double balance, List<Transactions> transactions)
+     
+        public Accounts(int ID, string name,string password, char gender, string address, string mobile, string email, double balance, List<Transactions> transactions)
         {
             ID = ID;
             Name = name;
+            Password = password;
             Gender = gender;
             Address = address;
             Mobile = mobile;
@@ -103,6 +120,12 @@ namespace Session_006_Task_0001
             }
         }
 
+        public bool CheckPassord(string password)
+        {
+            if (this.Password==password) return true;
+            else return false;
+        }
+
         public void PrintTransactions()
         {
             for (int i = 0; i < transactions.Count; i++)
@@ -122,11 +145,13 @@ namespace Session_006_Task_0001
     {
         static void Main(string[] args)
         {
-            Accounts account1 = new Accounts(1,"Hussien",'M',"KH","01004942074","h@m.com",10000, new List<Transactions>());
-            Accounts account2 = new Accounts(2,"Hussien",'M',"KH","01004942074","h@m.com",15000, new List<Transactions>());
-            
+            Accounts account1 = new Accounts(1,"Hussien","Pass",'M',"KH","01004942074","h@m.com",10000, new List<Transactions>());
+            Accounts account2 = new Accounts(2,"Hussien","Pass",'M',"KH","01004942074","h@m.com",15000, new List<Transactions>());
+            SavedAccount account3 = new SavedAccount(3,"Hussien","Pass",'M',"KH","01004942074","h@m.com",20000, new List<Transactions>(),2);
+
             Console.WriteLine(account1.Balance);
             Console.WriteLine(account2.Balance);
+            Console.WriteLine(account3.Balance);
 
             account1.Deposit(3000);
             account1.Withdrawal(2000);
