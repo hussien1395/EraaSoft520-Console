@@ -44,7 +44,6 @@ namespace Session_007_Task_0001
 
             DisplayAllInstructor(allInstructors);
 
-          
         }
 
         public static Instructor AddInstructor()
