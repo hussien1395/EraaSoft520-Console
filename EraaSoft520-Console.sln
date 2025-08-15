@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 007 Challenges", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 007 Challenges 002", "Session 007 Challenges 002\Session 007 Challenges 002.csproj", "{DA05E1D2-1873-44BA-88B1-B9DEACFBB0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session 007-Task-0001", "Session 007-Task-0001\Session 007-Task-0001.csproj", "{5BB197A9-7047-46E8-961B-C03821AECA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session 007-Task-0001", "Session 007-Task-0001\Session 007-Task-0001.csproj", "{5BB197A9-7047-46E8-961B-C03821AECA37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session 008 Challenges 001", "Session 008 Challenges 001\Session 008 Challenges 001.csproj", "{BBC9EBDA-1C4A-4CF1-8871-8EEE55669C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{5BB197A9-7047-46E8-961B-C03821AECA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BB197A9-7047-46E8-961B-C03821AECA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BB197A9-7047-46E8-961B-C03821AECA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC9EBDA-1C4A-4CF1-8871-8EEE55669C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC9EBDA-1C4A-4CF1-8871-8EEE55669C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC9EBDA-1C4A-4CF1-8871-8EEE55669C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC9EBDA-1C4A-4CF1-8871-8EEE55669C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

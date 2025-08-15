@@ -28,21 +28,26 @@ namespace Session_007_Task_0001
 
             // Students
             Student student1 = AddStudent(new List<Course>());
-            //student1.Courses.Add(course1);
             allStudents.Add(student1);
 
-             // Student Manager
-             StudentManager studentManager1 = new StudentManager();
-            studentManager1.Instructors = allInstructors;
-            studentManager1.Courses = allCourses;
-            studentManager1.Students = allStudents;
+            Student student2 = AddStudent(new List<Course>());
+            allStudents.Add(student2);
 
             EnrollStudentInCourse(allStudents, allCourses);
-
-            // Display information
-            DisplayInfo(instructor1, course1, student1);
-
             DisplayAllInstructor(allInstructors);
+            DisplayAllCourse(allCourses);
+            DisplayAllStudent(allStudents);
+
+            Console.WriteLine("Enter student ID to Search");
+            int stdID = Convert.ToInt32(Console.ReadLine());
+            var student= SearchStudentById(allStudents, stdID);
+            DisplayStudent(student);
+
+            UpdateStudent(allStudents, allCourses);
+            DisplayAllStudent(allStudents);
+
+            DeleteStudent(allStudents);
+            DisplayAllStudent(allStudents);
 
         }
 
@@ -78,7 +83,7 @@ namespace Session_007_Task_0001
             {
                 CourseId = CourseId,
                 Title = CourseTitle,
-                Instructor = instructor // Assign the instructor to the course
+                Instructor = instructor 
             };
             return course;
         }
@@ -115,20 +120,35 @@ namespace Session_007_Task_0001
             }
         }
 
-
-
-        public static void DisplayInfo(Instructor instructor, Course course, Student student)
+        public static void DisplayAllCourse(List<Course> courses)
         {
-            Console.WriteLine("<<< Instructor >>>");
-            Console.WriteLine($"Instructor ID: {instructor.InstructorId}");
-            Console.WriteLine($"Name: {instructor.Name}");
-            Console.WriteLine($"Specialization: {instructor.Specialization}");
+            foreach (var course in courses)
+            {
+                Console.WriteLine("<<< Course >>>");
+                Console.WriteLine($"Course ID: {course.CourseId}");
+                Console.WriteLine($"Course Name: {course.Title}");
+                Console.WriteLine($"Instructor Name: {course.Instructor.Name}");
+            }
+        }
 
-            Console.WriteLine("<<< Course >>>");
-            Console.WriteLine($"Course ID: {course.CourseId}");
-            Console.WriteLine($"Title: {course.Title}");
-            Console.WriteLine($"Instructor: {course.Instructor.Name}");
+        public static void DisplayAllStudent(List<Student> students)
+        {
+            foreach (var student in students)
+            {
+                Console.WriteLine("<<< Student >>>");
+                Console.WriteLine($"Student ID: {student.StudentId}");
+                Console.WriteLine($"Name: {student.Name}");
+                Console.WriteLine($"Age: {student.Age}");
+                Console.WriteLine("Courses:");
+                foreach (var courseItem in student.Courses)
+                {
+                    Console.WriteLine($"- {courseItem.Title}");
+                }
+            }
+        }
 
+        public static void DisplayStudent(Student student)
+        {
             Console.WriteLine("<<< Student >>>");
             Console.WriteLine($"Student ID: {student.StudentId}");
             Console.WriteLine($"Name: {student.Name}");
@@ -138,6 +158,75 @@ namespace Session_007_Task_0001
             {
                 Console.WriteLine($"- {courseItem.Title}");
             }
+        }
+
+        public static Student SearchStudentById(List<Student> students, int id)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].StudentId == id)
+                    return students[i];
+            }
+            return null;
+        }
+
+        public static bool UpdateStudent(List<Student> students, List<Course> allCourses)
+        {
+            Console.WriteLine("Please enter student ID to update information");
+            int stdID = Convert.ToInt32(Console.ReadLine());
+
+            var student = SearchStudentById(students, stdID);
+            if (student == null)
+            {
+                Console.WriteLine("Student not found.");
+                return false;
+            }
+
+            Console.WriteLine("Enter new name");
+            string newStdName = Console.ReadLine();
+
+            Console.WriteLine("Enter new age");
+            int newStdAge   = Convert.ToInt32(Console.ReadLine());
+
+            student.Name = newStdName;
+            student.Age = newStdAge;
+            student.Courses.Clear();
+
+            // Display list of available courses
+            Console.WriteLine("Select a course to enroll in:");
+            for (int i = 0; i < allCourses.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {allCourses[i].Title} (ID: {allCourses[i].CourseId})");
+            }
+            int courseChoice = Convert.ToInt32(Console.ReadLine()) -1;
+
+            if (courseChoice < 0 || courseChoice >= allCourses.Count)
+            {
+                Console.WriteLine("Invalid course selection.");
+                return false;
+            }
+
+            // Enroll the selected student in the selected course
+            student.Courses.Add(allCourses[courseChoice]);
+            Console.WriteLine($"Student {student.Name} (ID: {student.StudentId}) has been updated.");
+            return true;
+        }
+
+        public static bool DeleteStudent(List<Student> students)
+        {
+            Console.WriteLine("Please enter student ID to delete:");
+            int stdID = Convert.ToInt32(Console.ReadLine());
+
+            var student = SearchStudentById(students, stdID);
+            if (student == null)
+            {
+                Console.WriteLine("Student not found.");
+                return false;
+            }
+
+            students.Remove(student);
+            Console.WriteLine($"Student {student.Name} (ID: {student.StudentId}) has been deleted.");
+            return true;
         }
 
         public static void EnrollStudentInCourse(List<Student> students, List<Course> courses)
@@ -150,7 +239,7 @@ namespace Session_007_Task_0001
             {
                 Console.WriteLine($"{i + 1}. {students[i].Name} (ID: {students[i].StudentId})");
             }
-            int studentChoice = Convert.ToInt32(Console.ReadLine()) - 1; // User selects student by number
+            int studentChoice = Convert.ToInt32(Console.ReadLine()) - 1;
 
             // Display list of available courses
             Console.WriteLine("Select a course to enroll in:");
@@ -158,7 +247,7 @@ namespace Session_007_Task_0001
             {
                 Console.WriteLine($"{i + 1}. {courses[i].Title} (ID: {courses[i].CourseId})");
             }
-            int courseChoice = Convert.ToInt32(Console.ReadLine()) - 1; // User selects course by number
+            int courseChoice = Convert.ToInt32(Console.ReadLine()) - 1; 
 
             // Enroll the selected student in the selected course
             students[studentChoice].Courses.Add(courses[courseChoice]);
